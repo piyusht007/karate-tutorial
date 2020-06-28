@@ -52,7 +52,7 @@ Following maven command will be used to run the feature files:
 mvn test -P karate-integration-tests -Dtest=TestParallel -Dproduct.service.base.url=<Actual_URL>
 ```
 
-#### Test Reports
+### Test Reports
 
 This project uses `cucumber-reporting` maven plugin to generate the HTML & JSON reports from the `maven-surefire` xml reports.
 
