@@ -62,4 +62,28 @@ To get these HTML reports in `jenkins` we need to install a jenkins plugin `Cucu
 
 To setup this plugin in `jenkins` following [blog](https://medium.com/faun/karate-cucumber-reports-integration-in-jenkins-3f0e617c8265) can also be looked at.
 
+### Tips
+
+* Conditionally calling a feature file:
+``` 
+* def shouldCallAnotherFeature = <someVariable/expression> ? true : false
+* def anotherFeatureArgs = { param1: '#(param1)', param2: '#(param2)' }
+* def anotherFeatureResult = shouldCallAnotherFeature ? karate.call('another.feature', anotherFeatureArgs) : 'No need to call another feature'
+```
+
+* Check contains using javascript function:
+```
+* def isMatched = function(a, b) { return a.indexOf(b) !== -1 }
+* def result = isMatched('The beautiful mind', 'beautiful')
+* print result
+```
+
+* Switch to appropriate defaults at the start of feature:
+```
+* def count = __arg.count ? __arg.count : 0
+* def name = __arg.name ? __arg.name : 'NA'
+```
+
+
+
 
