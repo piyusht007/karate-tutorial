@@ -84,6 +84,23 @@ To setup this plugin in `jenkins` following [blog](https://medium.com/faun/karat
 * def name = __arg.name ? __arg.name : 'NA'
 ```
 
+* Javascript function to parse dynamic keys/properties names:
+```
+function getKeys(response) {
+    for (key in response) {
+        console.log('Key: ' + key + ', Value: ' + response[key]);
+    }
+}
+```
+We might encounter JSON where keys/properties names can be any id (uuid), number etc.. In those cases we can use above function to get those key names and get the respective key value. 
+
+Example JSON:
+```
+{
+	'e162b50e-7f0d-4d4c-8c75-8bbcaa51bafc': 'testValue',
+	'9cbc301d-f320-48b7-b837-95eecb5f89cf': 'testValue'
+}
+```
 
 
 
